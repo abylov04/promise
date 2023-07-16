@@ -1,0 +1,128 @@
+.containers{
+    width: 90%;
+    margin: 0 auto;
+}
+#header{
+    padding: 20px ;
+    background: #000;
+    color: antiquewhite;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.header-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.header-nav--item{
+    margin: 0 20px;
+   text-decoration: none;
+   color: white;
+   font-size: 1.2rem; 
+   position: relative;
+}
+.header-nav--item:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: aqua;
+    transition: .2s;
+}
+.header-nav--item:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 2px;
+    background-color: aqua;
+    transition: .2s;
+}
+
+.header-nav--item:hover::after{
+    width: 50%;
+}
+.header-nav--item:hover::before{
+    width: 50%;
+}
+.header-nav--item:hover{
+    color: aqua;
+}
+.burger-menu{
+    display: none;
+}
+.burger-item{
+    width: 40px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    transition: .3s;
+}
+
+@media (max-width:768px) {
+    .containers{
+        width: 90%;
+    }
+    .burger-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .header-nav{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        right: 0;
+        top: 0;
+        background: #0ce10c;
+        padding: 20% 10% 40px 30px;
+        transform: translateX(100%);
+        transition: .2s;
+    }
+    .header-nav--item{
+        margin: 10px 0;
+    }
+}
+.close.btn{
+    position: absolute;
+    right: 30px;
+    top: 0;
+    font-size: 3rem;
+    cursor: grab;
+    transition: .2s;
+}
+.close.btn :hover{
+    transform: scale(1.2);
+    color: red;
+}
+.blur.window{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 0;
+}
+.breeds{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5%;
+}
+.breed-img{
+    padding: 5% 0;
+}
